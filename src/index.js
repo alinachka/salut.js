@@ -9,7 +9,7 @@ import {model} from './intents.js';
 
 const port = process.env.PORT || 3000;
 const index = express();
-index().use(express.json());
+index.use(express.json());
 
 index.listen(port);
 
