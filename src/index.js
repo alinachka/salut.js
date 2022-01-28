@@ -17,7 +17,7 @@ const {intent } = createMatchers();
 
 
 const intents = createIntents(model);
-index.post('/index-connector',saluteExpressMiddleware({
+index.post('/app-connector',saluteExpressMiddleware({
     intents,
     recognizer: new SmartAppBrainRecognizer(),
     systemScenario: createSystemScenario({
