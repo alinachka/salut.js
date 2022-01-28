@@ -3,9 +3,9 @@ import { createIntents, createSystemScenario, createUserScenario, createMatchers
 import { SmartAppBrainRecognizer } from '@salutejs/recognizer-smartapp-brain';
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory';
 
-import { saluteExpressMiddleware } from './middleware.ts';
-import * as dictionary from './mainPage.i18n';
-import model from 'intents.json';
+import { saluteExpressMiddleware } from './middleware.js';
+import * as dictionary from './mainPage.i18n/index.js';
+import {model} from './intents.js';
 
 const port = process.env.PORT || 3000;
 const index = express();
