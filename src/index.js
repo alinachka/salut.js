@@ -35,15 +35,10 @@ index.post('/app-connector',saluteExpressMiddleware({
         calc: {
             match: intent('/sum'),
             handle: ({ req, res }) => {
-                const keyset = req.i18n(dictionary);
                 const { num1, num2 } = req.variables;
-
-                res.appendBubble(
-                    // keyset('{result}. Это было легко!', {
-                    //     result: Number(num1) + Number(num2),
-                    // }),
-                    'Это было легко!'
-                );
+                const result = Number(num1) + Number(num2);
+                console.log(result);
+                res.appendBubble("Я тебе не калькулятор вообще-то. Ладно. " + result + "\nНо больше не дергай меня, по-братски");
             },
         },
     }),
