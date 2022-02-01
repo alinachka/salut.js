@@ -6,6 +6,7 @@ import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory';
 import { saluteExpressMiddleware } from './middleware.js';
 import * as dictionary from './mainPage.i18n/index.js';
 import {model} from './intents.js';
+import 'dotenv/config.js'
 
 const port = process.env.PORT || 3000;
 const index = express();
@@ -37,10 +38,11 @@ index.post('/app-connector',saluteExpressMiddleware({
                 const keyset = req.i18n(dictionary);
                 const { num1, num2 } = req.variables;
 
-                res.setPronounceText(
-                    keyset('{result}. Это было легко!', {
-                        result: Number(num1) + Number(num2),
-                    }),
+                res.appendBubble(
+                    // keyset('{result}. Это было легко!', {
+                    //     result: Number(num1) + Number(num2),
+                    // }),
+                    'Это было легко!'
                 );
             },
         },
